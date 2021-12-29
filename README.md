@@ -1,2 +1,3 @@
 # ADP
-Facial Attendance System
+Facial Attendance System with QR code
+
