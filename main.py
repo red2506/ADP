@@ -54,10 +54,14 @@ while True:
         print("Data: ", obj.data, "\n")
         path = "C:\\Users\\hpadmin\\Desktop\\New folder\\"+str(obj.data)
         webbrowser.open(path) # Opens 'PycharmProjects' folder
-        print("Match Found!");
-        
-        current_file = open(path, "r")
+        for file in os.listdir(path):
+        # Check whether file is in text format or not
+            if file.endswith(".txt"):
+                file_path = f"{path}\{file}"
+        # call read text file function
+        current_file = open(file_path, "r")
         print(current_file.read())
+        print("Match Found!");
         print("Running face recognition......");
         encodeListKnown = findEncodings(images)
         print('Encoding Complete')
