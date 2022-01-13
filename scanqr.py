@@ -4,8 +4,6 @@ import pyzbar.pyzbar as pyzbar
 
 
 
-
-  
 '''
 cap = cv2.VideoCapture(0)
 # initialize the cv2 QRCode detector
@@ -39,8 +37,11 @@ while True:
         print("Data: ", obj.data, "\n")
         path = "C:\\Users\\hpadmin\\Desktop\\New folder\\"+str(obj.data)
         webbrowser.open(path) # Opens 'PycharmProjects' folder
+        print("Match Found!");
         current_file = open(path, "r")
         print(current_file.read())
+        print("Running face recognition......");
+        exec('attendance.py');
         current_file.close()
     # cv2.imshow("QRCODEscanner", frame)    
     key = cv2.waitKey(1)
