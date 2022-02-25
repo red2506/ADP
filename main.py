@@ -1,5 +1,4 @@
 import cv2
-import webbrowser
 import pyzbar.pyzbar as pyzbar
 from face_recognition.api import face_locations
 import numpy as np
@@ -48,7 +47,12 @@ while True:
     for obj in decodedObjects:
         print("Type:", obj.type)
         print("Data: ", obj.data, "\n")
-        path = "C:\\Users\\hpadmin\\Desktop\\New folder\\"+str(obj.data)
+        string = str(obj.data)
+        test= string.strip("\\n'")
+        #path = "C:\\Users\\hpadmin\\Desktop\\New folder\\"+str(obj.data)
+        #path = "C:\\Users\\hpadmin\\Desktop\\New folder\\b'1BG19CS014'"
+        path = "C:\\Users\\hpadmin\\Desktop\\New folder\\"+test+"'"
+
         for file in os.listdir(path):
             if file.endswith(".txt"):
                 file_path = f"{path}\{file}"
